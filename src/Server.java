@@ -36,6 +36,7 @@ public class Server {
                 String inMsg = in.readLine();
 
                 // GET/HEAD/POST/PUT 의 Request 에 대한 Response
+
                 if(inMsg.equalsIgnoreCase("bye")) {
                     // 종료 메세지
                     System.out.println("종료");
@@ -44,24 +45,36 @@ public class Server {
                     break;
                 }
                 System.out.println("클라이언트 >> : " + inMsg);
-
-                if(inMsg.equals("GET-응답 200")){
-                    out.write("HTTP/1.1 200 OK" + "\n");
-                } else if(inMsg.equals("GET-응답 404")){
-                    out.write("HTTP/1.1 404 Not Found" + "\n");
-                } else if(inMsg.equals("HEAD-응답 100")){
-                    out.write("HTTP/1.1 100 Continue" + "\n");
-                } else if(inMsg.equals("HEAD-응답 101")){
-                    out.write("HTTP/1.1 101 Switching Protocols" + "\n");
-                } else if(inMsg.equals("POST-응답 500")){
-                    out.write("HTTP/1.1 500 Internal Server Error" + "\n");
-                } else if(inMsg.equals("POST-응답 400")){
-                    out.write("HTTP/1.1 400 Bad Request" + "\n");
-                } else if(inMsg.equals("PUT-응답 301")){
-                    out.write("HTTP/1.1 301 Moved Permanently" + "\n");
-                } else if(inMsg.equals("PUT-응답 503")){
-                    out.write("HTTP/1.1 503 Service Unavailable" + "\n");
+                switch(inMsg){
+                    case "GET-응답 200":
+                        out.write("HTTP/1.1 200 OK" + "\n");
+                        break;
+                    case "GET-응답 404":
+                        out.write("HTTP/1.1 404 Not Found" + "\n");
+                        break;
+                    case "HEAD-응답 100":
+                        out.write("HTTP/1.1 100 Continue" + "\n");
+                        break;
+                    case "HEAD-응답 101":
+                        out.write("HTTP/1.1 101 Switching Protocols" + "\n");
+                        break;
+                    case "POST-응답 500":
+                        out.write("HTTP/1.1 500 Internal Server Error" + "\n");
+                        break;
+                    case "POST-응답 400":
+                        out.write("HTTP/1.1 400 Bad Request" + "\n");
+                        break;
+                    case "PUT-응답 301":
+                        out.write("HTTP/1.1 301 Moved Permanently" + "\n");
+                        break;
+                    case "PUT-응답 503":
+                        out.write("HTTP/1.1 503 Service Unavailable" + "\n");
+                        break;
+                    default:
+                        out.write("잘못된 요청입니다." + "\n");
+                        break;
                 }
+
                 out.flush();
             }
 
