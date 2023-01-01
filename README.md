@@ -133,7 +133,7 @@ String inMsg = in.readLine();
 System.out.println("서버 >> : " + inMsg);
 ```
 
-소켓및 input/output stream 종료
+소켓 및 input/output stream 종료
 ```
 in.close();
 out.close();
