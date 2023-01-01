@@ -54,19 +54,37 @@ String msg = in.readLine();
 
 GET/HEAD/POST/PUT Request에 따른 Response를 Client로 전송
 ```
-if(inMsg.equals("GET-응답 200")){
-    out.write("HTTP/1.1 200 OK" + "\n");
-} else if(inMsg.equals("GET-응답 404")){
-    out.write("HTTP/1.1 404 Not Found" + "\n");
-} else if(inMsg.equals("HEAD-응답 100")){
-    out.write("HTTP/1.1 100 Continue" + "\n");
-} else if(inMsg.equals("HEAD-응답 101")){
-    out.write("HTTP/1.1 101 Switching Protocols" + "\n");
+switch(inMsg){
+    case "GET-응답 200":
+        out.write("HTTP/1.1 200 OK" + "\n");
+        break;
+    case "GET-응답 404":
+        out.write("HTTP/1.1 404 Not Found" + "\n");
+        break;
+    case "HEAD-응답 100":
+        out.write("HTTP/1.1 100 Continue" + "\n");
+        break;
+    case "HEAD-응답 101":
+        out.write("HTTP/1.1 101 Switching Protocols" + "\n");
+        break;
+    case "POST-응답 500":
+        out.write("HTTP/1.1 500 Internal Server Error" + "\n");
+        break;
+    case "POST-응답 400":
+        out.write("HTTP/1.1 400 Bad Request" + "\n");
+        break;
+    case "PUT-응답 301":
+        out.write("HTTP/1.1 301 Moved Permanently" + "\n");
+        break;
+    case "PUT-응답 503":
+        out.write("HTTP/1.1 503 Service Unavailable" + "\n");
+        break;
+    default:
+        out.write("잘못된 요청입니다." + "\n");
+        break;
 }
-.
-.
-.
-out.flush()
+
+out.flush();
 ```
 
 소켓, 서버 및 input/output stream 종료
