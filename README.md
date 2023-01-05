@@ -133,7 +133,7 @@ String inMsg = in.readLine();
 System.out.println("서버 >> : " + inMsg);
 ```
 
-소켓및 input/output stream 종료
+소켓 및 input/output stream 종료
 ```
 in.close();
 out.close();
@@ -177,6 +177,6 @@ Client request: PUT-응답 301
 Server response: HTTP/1.1 301 Moved Permanently
 
 <br>
-Client request: GET-응답 200
+Client request: PUT-응답 503
 
 Server response: HTTP/1.1 503 Service Unavailable
