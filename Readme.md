@@ -1,75 +1,93 @@
 # SocketProgramming
 
-# ¸ñÂ÷
-0. Âü°í ÀÚ·á
-1. ¼ÒÄÏ(Socket)°ú ¼ÒÄÏÅë½ÅÀÌ¶õ
-2. ¼­¹ö¿Í Å¬¶óÀÌ¾ğÆ®
-3. ¼­¹ö ¼ÒÄÏ ±¸Çö
-4. Å¬¶óÀÌ¾ğÆ® ¼ÒÄÏ ±¸Çö
-5. Å¬¶óÀÌ¾ğÆ® GET/HEAD/POST/PUT Request ¸ñ·Ï
+# ëª©ì°¨
+0. ì°¸ê³  ìë£Œ
+1. ì†Œì¼“(Socket)ê³¼ ì†Œì¼“í†µì‹ ì´ë€
+2. ì„œë²„ì™€ í´ë¼ì´ì–¸íŠ¸
+3. ì„œë²„ ì†Œì¼“ êµ¬í˜„
+4. í´ë¼ì´ì–¸íŠ¸ ì†Œì¼“ êµ¬í˜„
+5. í´ë¼ì´ì–¸íŠ¸ GET/HEAD/POST/PUT Request ëª©ë¡
 
-## 0. Âü°íÀÚ·á
+## 0. ì°¸ê³ ìë£Œ
 - https://javaplant.tistory.com/18
 - https://www.youtube.com/watch?v=dX82Wuc18wk
 - https://kadosholy.tistory.com/125
 
-## 1. ¼ÒÄÏ(Socket)ÀÌ¶õ
-¼ÒÄÏÀÌ¶õ ÇÁ·Î¼¼½º°¡ ³×Æ®¿öÅ© ¼¼°è·Î µ¥ÀÌÅÍ¸¦ ³»º¸³»°Å³ª È¤Àº µ¥ÀÌÅÍ¸¦ ¹Ş±â À§ÇÑ ½ÇÁ¦ÀûÀÎ Ã¢±¸¿ªÇÒÀ¸·Î ÇÁ·ÎÅäÄİ, IPÁÖ¼Ò, Æ÷Æ® ³Ñ¹ö·Î Á¤ÀÇµÇ¸ç ¿ªÇÒ¿¡ µû¶ó ¼­¹ö ¼ÒÄÏ, Å¬¶óÀÌ¾ğÆ® ¼ÒÄÏÀ¸·Î ±¸ºĞµÈ´Ù.
+## 1. ì†Œì¼“(Socket)ì´ë€
+ì†Œì¼“ì´ë€ í”„ë¡œì„¸ìŠ¤ê°€ ë„¤íŠ¸ì›Œí¬ ì„¸ê³„ë¡œ ë°ì´í„°ë¥¼ ë‚´ë³´ë‚´ê±°ë‚˜ í˜¹ì€ ë°ì´í„°ë¥¼ ë°›ê¸° ìœ„í•œ ì‹¤ì œì ì¸ ì°½êµ¬ì—­í• ìœ¼ë¡œ í”„ë¡œí† ì½œ, IPì£¼ì†Œ, í¬íŠ¸ ë„˜ë²„ë¡œ ì •ì˜ë˜ë©° ì—­í• ì— ë”°ë¼ ì„œë²„ ì†Œì¼“, í´ë¼ì´ì–¸íŠ¸ ì†Œì¼“ìœ¼ë¡œ êµ¬ë¶„ëœë‹¤.
 
-¼ÒÄÏ°ú Åë½ÅÀ» À§ÇØ ³×Æ®¿öÅ©»ó¿¡¼­ Å¬¶óÀÌ¾ğÆ®¿Í ¼­¹ö¿¡ ÇØ´çµÇ´Â ÄÄÇ»ÅÍ¸¦ ½Äº°ÇÏ±â À§ÇÑ **IPÁÖ¼Ò**¿Í ÀÀ¿ëÇÁ·Î±×·¥À» ½Äº°ÇÏ±â À§ÇÑ **Æ÷Æ®¹øÈ£**°¡ »ç¿ëµÈ´Ù.
+ì†Œì¼“ê³¼ í†µì‹ ì„ ìœ„í•´ ë„¤íŠ¸ì›Œí¬ìƒì—ì„œ í´ë¼ì´ì–¸íŠ¸ì™€ ì„œë²„ì— í•´ë‹¹ë˜ëŠ” ì»´í“¨í„°ë¥¼ ì‹ë³„í•˜ê¸° ìœ„í•œ **IPì£¼ì†Œ**ì™€ ì‘ìš©í”„ë¡œê·¸ë¨ì„ ì‹ë³„í•˜ê¸° ìœ„í•œ **í¬íŠ¸ë²ˆí˜¸**ê°€ ì‚¬ìš©ëœë‹¤.
 
-## 2. ¼­¹ö¿Í Å¬¶óÀÌ¾ğÆ®
-- **¼­¹ö** : Å¬¶óÀÌ¾ğÆ®ÀÇ ¼ÒÄÏ ¿¬°á ¿äÃ»À» ´ë±âÇÏ°í, ¿¬°á¿äÃ»ÀÌ ¿À¸é Å¬¶óÀÌ¾ğÆ® ¼ÒÄÏÀ» »ı¼ºÇÏ¿© Åë½ÅÀ» °¡´ÉÇÏ°Ô ÇÑ´Ù.
-- **Å¬¶óÀÌ¾ğÆ®** : ½ÇÁ¦·Î µ¥ÀÌÅÍ ¼Û¼ö½ÅÀÌ ÀÏ¾î³ª´Â ¼ÒÄÏÀÌ´Ù.
+## 2. ì„œë²„ì™€ í´ë¼ì´ì–¸íŠ¸
+- **ì„œë²„** : í´ë¼ì´ì–¸íŠ¸ì˜ ì†Œì¼“ ì—°ê²° ìš”ì²­ì„ ëŒ€ê¸°í•˜ê³ , ì—°ê²°ìš”ì²­ì´ ì˜¤ë©´ í´ë¼ì´ì–¸íŠ¸ ì†Œì¼“ì„ ìƒì„±í•˜ì—¬ í†µì‹ ì„ ê°€ëŠ¥í•˜ê²Œ í•œë‹¤.
+- **í´ë¼ì´ì–¸íŠ¸** : ì‹¤ì œë¡œ ë°ì´í„° ì†¡ìˆ˜ì‹ ì´ ì¼ì–´ë‚˜ëŠ” ì†Œì¼“ì´ë‹¤.
 
-## 3. ¼­¹ö ¼ÒÄÏ ±¸Çö
-¼­¹ö, ¼ÒÄÏ ¼±¾ğ
+## 3. ì„œë²„ ì†Œì¼“ êµ¬í˜„
+ì„œë²„, ì†Œì¼“ ì„ ì–¸
 ```
 ServerSocket server = null;
 Socket socket = null;
 ```
 
-µ¥ÀÌÅÍ ¼Û¼ö½ÅÀ» À§ÇÑ input/output ½ºÆ®¸² ¼±¾ğ
+ë°ì´í„° ì†¡ìˆ˜ì‹ ì„ ìœ„í•œ input/output ìŠ¤íŠ¸ë¦¼ ì„ ì–¸
 ```
 BufferedReader in = null;
 BufferedWriter out = null;
 ```
 
-Port ¹øÈ£·Î ¼­¹ö »ı¼º ¹× Å¬¶óÀÌ¾ğÆ® ¿¬°á
+Port ë²ˆí˜¸ë¡œ ì„œë²„ ìƒì„± ë° í´ë¼ì´ì–¸íŠ¸ ì—°ê²°
 ```
 server = new ServerSocket(5555);
 socket = server.accept();
 ```
 
-input/output ½ºÆ®¸² »ı¼º
+input/output ìŠ¤íŠ¸ë¦¼ ìƒì„±
 ```
 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 ```
 
-Client°¡ º¸³½ Request ¼ö½Å
+Clientê°€ ë³´ë‚¸ Request ìˆ˜ì‹ 
 ```
 String msg = in.readLine();
 ```
 
-GET/HEAD/POST/PUT Request¿¡ µû¸¥ Response¸¦ Client·Î Àü¼Û
+GET/HEAD/POST/PUT Requestì— ë”°ë¥¸ Responseë¥¼ Clientë¡œ ì „ì†¡
 ```
-if(inMsg.equals("GET-ÀÀ´ä 200")){
-    out.write("HTTP/1.1 200 OK" + "\n");
-} else if(inMsg.equals("GET-ÀÀ´ä 404")){
-    out.write("HTTP/1.1 404 Not Found" + "\n");
-} else if(inMsg.equals("HEAD-ÀÀ´ä 100")){
-    out.write("HTTP/1.1 100 Continue" + "\n");
-} else if(inMsg.equals("HEAD-ÀÀ´ä 101")){
-    out.write("HTTP/1.1 101 Switching Protocols" + "\n");
+switch(inMsg){
+    case "GET-ì‘ë‹µ 200":
+        out.write("HTTP/1.1 200 OK" + "\n");
+        break;
+    case "GET-ì‘ë‹µ 404":
+        out.write("HTTP/1.1 404 Not Found" + "\n");
+        break;
+    case "HEAD-ì‘ë‹µ 100":
+        out.write("HTTP/1.1 100 Continue" + "\n");
+        break;
+    case "HEAD-ì‘ë‹µ 101":
+        out.write("HTTP/1.1 101 Switching Protocols" + "\n");
+        break;
+    case "POST-ì‘ë‹µ 500":
+        out.write("HTTP/1.1 500 Internal Server Error" + "\n");
+        break;
+    case "POST-ì‘ë‹µ 400":
+        out.write("HTTP/1.1 400 Bad Request" + "\n");
+        break;
+    case "PUT-ì‘ë‹µ 301":
+        out.write("HTTP/1.1 301 Moved Permanently" + "\n");
+        break;
+    case "PUT-ì‘ë‹µ 503":
+        out.write("HTTP/1.1 503 Service Unavailable" + "\n");
+        break;
+    default:
+        out.write("ì˜ëª»ëœ ìš”ì²­ì…ë‹ˆë‹¤." + "\n");
+        break;
 }
-.
-.
-.
-out.flush()
+
+out.flush();
 ```
 
-¼ÒÄÏ, ¼­¹ö ¹× input/output stream Á¾·á
+ì†Œì¼“, ì„œë²„ ë° input/output stream ì¢…ë£Œ
 ```
 in.close();
 out.close();
@@ -77,88 +95,88 @@ socket.close();
 server.close();
 ```
 
-## 4. Å¬¶óÀÌ¾ğÆ® ¼ÒÄÏ ±¸Çö
+## 4. í´ë¼ì´ì–¸íŠ¸ ì†Œì¼“ êµ¬í˜„
 
-¼ÒÄÏ ¼±¾ğ (Å¬¶óÀÌ¾ğÆ® ¼ÒÄÏÀº ¼­¹ö¼ÒÄÏÀÌ ÇÊ¿ä¾ø´Ù)
+ì†Œì¼“ ì„ ì–¸ (í´ë¼ì´ì–¸íŠ¸ ì†Œì¼“ì€ ì„œë²„ì†Œì¼“ì´ í•„ìš”ì—†ë‹¤)
 ```
 Socket socket = null;
 ```
 
-µ¥ÀÌÅÍ ¼Û¼ö½ÅÀ» À§ÇÑ input/output ½ºÆ®¸² ¼±¾ğ
+ë°ì´í„° ì†¡ìˆ˜ì‹ ì„ ìœ„í•œ input/output ìŠ¤íŠ¸ë¦¼ ì„ ì–¸
 ```
 BufferedReader in = null;
 BufferedWriter out = null;
 ```
 
-Port ¹øÈ£·Î ¼ÒÄÏ »ı¼º
+Port ë²ˆí˜¸ë¡œ ì†Œì¼“ ìƒì„±
 ```
 socket = new Socket("localhost", 5555);
 ```
 
-input/output ½ºÆ®¸² »ı¼º
+input/output ìŠ¤íŠ¸ë¦¼ ìƒì„±
 ```
 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 ```
 
-ClientÀÇ Request ¸Ş½ÃÁö ÀÔ·Â ¹× Server·Î Àü¼Û
+Clientì˜ Request ë©”ì‹œì§€ ì…ë ¥ ë° Serverë¡œ ì „ì†¡
 ```
-System.out.print("ÀÔ·Â (BYE ÀÔ·Â½Ã Á¾·á) >> ");
+System.out.print("ì…ë ¥ (BYE ì…ë ¥ì‹œ ì¢…ë£Œ) >> ");
 String outMsg = sc.nextLine();
 out.write(outMsg + "\n");
 out.flush();
 ```
 
-ServerÀÇ Response ¸Ş½ÃÁö ¼ö½Å ¹× Ãâ·Â
+Serverì˜ Response ë©”ì‹œì§€ ìˆ˜ì‹  ë° ì¶œë ¥
 ```
 String inMsg = in.readLine();
-System.out.println("¼­¹ö >> : " + inMsg);
+System.out.println("ì„œë²„ >> : " + inMsg);
 ```
 
-¼ÒÄÏ¹× input/output stream Á¾·á
+ì†Œì¼“ë° input/output stream ì¢…ë£Œ
 ```
 in.close();
 out.close();
 socket.close();
 ```
 
-## 5. Å¬¶óÀÌ¾ğÆ® GET/HEAD/POST/PUT Request ¸Ş½ÃÁö ¸ñ·Ï
+## 5. í´ë¼ì´ì–¸íŠ¸ GET/HEAD/POST/PUT Request ë©”ì‹œì§€ ëª©ë¡
 <br>
-Client request: GET-ÀÀ´ä 200
+Client request: GET-ì‘ë‹µ 200
 
 Server response: HTTP/1.1 200 OK
 
 <br>
-Client request: GET-ÀÀ´ä 404
+Client request: GET-ì‘ë‹µ 404
 
 Server response: HTTP/1.1 404 Not Found
 
 <br>
-Client request: HEAD-ÀÀ´ä 100
+Client request: HEAD-ì‘ë‹µ 100
 
 Server response: HTTP/1.1 100 Continue
 
 <br>
-Client request: HEAD-ÀÀ´ä 101
+Client request: HEAD-ì‘ë‹µ 101
 
 Server response: HTTP/1.1 101 Switching Protocols
 
 <br>
-Client request: POST-ÀÀ´ä 500
+Client request: POST-ì‘ë‹µ 500
 
 Server response: HTTP/1.1 500 Internal Server Error
 
 <br>
-Client request: POST-ÀÀ´ä 400
+Client request: POST-ì‘ë‹µ 400
 
 Server response: HTTP/1.1 400 Bad Request
 
 <br>
-Client request: PUT-ÀÀ´ä 301
+Client request: PUT-ì‘ë‹µ 301
 
 Server response: HTTP/1.1 301 Moved Permanently
 
 <br>
-Client request: GET-ÀÀ´ä 200
+Client request: GET-ì‘ë‹µ 200
 
 Server response: HTTP/1.1 503 Service Unavailable

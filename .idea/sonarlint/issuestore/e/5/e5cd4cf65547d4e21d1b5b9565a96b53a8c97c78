@@ -1,0 +1,21 @@
+
+e
+java:S1192/"JDefine a constant instead of duplicating this literal "HTTP/1.1/" 6 times.(¹íåŒÿÿÿÿÿ
+e
+java:S2095"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(ŸÑ‡–üÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Çµí‘
+M	java:S106"9Replace this use of System.out or System.err by a logger.(×ú³&
+N	java:S106"9Replace this use of System.out or System.err by a logger.(á¡Ë
+7
+java:S1116%"Remove this empty statement.(‹‚—‚ûÿÿÿÿ
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(ıµÚ«ÿÿÿÿÿ
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(³Ñ¤
+S	java:S106L"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+S	java:S106V"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+E
+java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+M
+java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º8ÀÈ†Ø0
+S
+java:S1128"1Remove this unused import 'java.io.OutputStream'.(Ó ³ÿÿÿÿÿ8ÀÈ†Ø0

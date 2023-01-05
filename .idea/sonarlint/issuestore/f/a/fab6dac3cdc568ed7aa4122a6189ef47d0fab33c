@@ -1,0 +1,32 @@
+
+r
+java:S1192("VDefine a constant instead of duplicating this literal "Host: 127.0.0.1:5555
+" 6 times.(Ôï
+8Ÿ“àØ0
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÀ†ƒıÿÿÿÿ
+Y
+java:S2095"DUse try-with-resources or close this "Socket" in a "finally" clause.(ºÒï5
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ç‚Àš
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(³Ñ¤
+N
+java:S6126("2Replace this String concatenation with Text block.(Ôï
+8²¤¼‚Ø0
+T
+java:S6126*"2Replace this String concatenation with Text block.(âíâœûÿÿÿÿ8ù”àØ0
+T
+java:S6126,"2Replace this String concatenation with Text block.(±ø¹ùÿÿÿÿ8ù”àØ0
+T
+java:S6126."2Replace this String concatenation with Text block.(¸¥ñ€üÿÿÿÿ8ù”àØ0
+T
+java:S61260"2Replace this String concatenation with Text block.(à•á­úÿÿÿÿ8ù”àØ0
+T
+java:S61262"2Replace this String concatenation with Text block.(ô÷„‹øÿÿÿÿ8®ÚáØ0
+M	java:S106;"9Replace this use of System.out or System.err by a logger.(ŠÑâw
+S	java:S106A"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+S	java:S106J"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+E
+java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+M
+java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º8ñë†Ø0
+S
+java:S1128"1Remove this unused import 'java.io.OutputStream'.(Ó ³ÿÿÿÿÿ8ñë†Ø0
