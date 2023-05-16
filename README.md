@@ -117,4 +117,3 @@ Client request: GET
 # 7.	Wireshark Protocol 확인 결과
 <img width="452" alt="image" src="https://github.com/zkxmdkdltm/SocketProgramming/assets/102042061/b433b2d1-5246-4972-892a-a12fa27c6cbf">
 서버와 클라이언트 소켓 통신을 했을 때 각 명령어 별로 HTTP 프로토콜에 따라 Request 메시지가 잘 전달된 것을 Wireshark 로 확인.
-![image](https://github.com/zkxmdkdltm/SocketProgramming/assets/102042061/12e9d192-f32a-4956-ba4f-350fcb500e0f)
