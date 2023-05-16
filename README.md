@@ -90,17 +90,17 @@
 
 # 5.	클라이언트 Request 메시지 목록
 Client request: GET
-Server response: HTTP/1.1 200 OK
-Client request: GET
-Server response: HTTP/1.1 204 No content
-Client request: GET
-Server response: HTTP/1.1 200 OK
-Client request: GET
-Server response: HTTP/1.1 201 Created
-Client request: GET
-Server response: HTTP/1.1 404 Not found
-Client request: 그 외의 메세지
-Server response: HTTP/1.1 405 NotAllowed
+<br>Server response: HTTP/1.1 200 OK
+<br>Client request: GET
+<br>Server response: HTTP/1.1 204 No content
+<br>Client request: GET
+<br>Server response: HTTP/1.1 200 OK
+<br>Client request: GET
+<br>Server response: HTTP/1.1 201 Created
+<br>Client request: GET
+<br>Server response: HTTP/1.1 404 Not found
+<br>Client request: 그 외의 메세지
+<br>Server response: HTTP/1.1 405 NotAllowed
 
 # 6.	코드 실행 결과
  <img width="192" alt="image" src="https://github.com/zkxmdkdltm/SocketProgramming/assets/102042061/c52f4d85-72a2-47e1-b06f-270e35cb374d">
@@ -108,11 +108,11 @@ Server response: HTTP/1.1 405 NotAllowed
  
  <img width="452" alt="image" src="https://github.com/zkxmdkdltm/SocketProgramming/assets/102042061/e1b101ba-fdc4-43e5-b4b6-b2a2eb72ffdd">
 -	GET: 응답코드 200 OK 
--	POST: 응답코드 204 No content 
--	HEAD: 응답코드 200 OK
--	PUT: 응답코드 201 Created
--	DELETE: 응답코드 404 Not found
--	그 외 메시지: 응답코드 405 NotAllowed
+<br>-	POST: 응답코드 204 No content 
+<br>-	HEAD: 응답코드 200 OK
+<br>-	PUT: 응답코드 201 Created
+<br>-	DELETE: 응답코드 404 Not found
+<br>-	그 외 메시지: 응답코드 405 NotAllowed
 
 # 7.	Wireshark Protocol 확인 결과
 <img width="452" alt="image" src="https://github.com/zkxmdkdltm/SocketProgramming/assets/102042061/b433b2d1-5246-4972-892a-a12fa27c6cbf">
